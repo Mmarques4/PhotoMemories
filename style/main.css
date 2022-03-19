@@ -1,0 +1,241 @@
+/* grid beginning for page Layout */
+* {box-sizing: border-box;}
+
+    .wrapper {
+        max-width: 1024px;
+        margin: 0 auto;
+        font: 1.2em Arial, Helvetica, arial, sans-serif;
+    }
+
+    .wrapper > * {
+        border: 2px solid #000;
+        background-color: #adf0f1;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+  
+.main-head {
+  grid-area: header;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+/* pictures related to the header */
+#camera {
+  width: 200px;
+  height: 300px;
+}
+
+#title {
+  width: 450px;
+  height: 100px;
+  transform: translate(5%, -90%);
+}
+/* end of pictures related to header */
+
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+
+.placess {
+  grid-area: sidebar;
+  font-size: 17px;
+}
+
+.ad {
+  grid-area: ad;
+  font-size: 17px;
+}
+.main-footer {
+  grid-area: footer;
+}
+
+/* Pictures layout beginning */
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 20%;
+  max-width: 65%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/* Pictures ending */
+
+/* navigation bar begining  */
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 260px;
+  background-color:#ccf7f8;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: rgb(20, 53, 243);
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+  color: rgb(20, 53, 243);
+}
+
+/* nagivation bar ending */
+
+/* website gripd layout continuation */
+
+/* website small size */
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+      "header  header"
+      "nav     nav"
+      "sidebar content"
+      "ad      footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* website regular size */
+@media (min-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+      "header header  header"
+      "nav    content sidebar"
+      "nav    content ad"
+      "footer footer  footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
+}
+
+/* bullet point */
+ul.a {
+  list-style-type: circle;
+  transform: translate(10%, 10%);
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+/* bullet point end */
+
+#memories{
+  text-transform: uppercase;
+}
+
+/* gif image */
+#example {
+  width: 100%;
+  height: auto;
+}
+
+/* about me paragraph */
+
+#parapragh {
+  font: Arial, Helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+#states{
+ visibility: hidden; 
+ display: none;
+}
+
+#me{
+  visibility: hidden; 
+  display: none;
+ }
+
+/*  states image */
+
+@media screen and (max-width: 600px) {
+  /*no grid*/
+
+  #states{
+    visibility: visible;
+    display: inline-block; 
+  }
+
+  #me{
+    visibility: visible;
+    display: inline-block; 
+  }
+}
